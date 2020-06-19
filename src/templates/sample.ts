@@ -5,10 +5,13 @@ export interface CustomTemplateCertificate extends Document {
   recipient: {
     name: string;
   };
+  foo?: {
+    title: string;
+  };
 }
 
 export const customTemplateCertificate: CustomTemplateCertificate = {
-  name: "blockchain",
+  name: "OpenAttestation Tutorial Certificate of Completion",
   recipient: {
     name: "samarth"
   },
@@ -16,5 +19,8 @@ export const customTemplateCertificate: CustomTemplateCertificate = {
     name: "COC",
     type: "EMBEDDED_RENDERER",
     url: "https://www.havefruit.com/"
+  },
+  foo: {
+    title: "Bar is awesome"
   }
 };
