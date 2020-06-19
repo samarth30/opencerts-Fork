@@ -20,9 +20,9 @@ export const CustomTemplate: FunctionComponent<TemplateProps<CustomTemplateCerti
   return (
     <div css={containerStyle} className={className} id="custom-template">
       <PrintWatermark />
-      <h1>Engineering certificate</h1>
+      <h1>{document.name}</h1>
       <div>awarded to</div>
-      <h2>samarth gugnani</h2>
+      <h2>{document.recipient.name}</h2>
     </div>
   );
 };
