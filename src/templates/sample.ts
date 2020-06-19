@@ -14,7 +14,7 @@ export const customTemplateCertificate: CustomTemplateCertificate = {
   $template: {
     name: "COC",
     type: "EMBEDDED_RENDERER",
-    url: "http://localhost:3000"
+    url: "http://www.icerts.io/"
   },
   foo: {
     title: "Bar is awesome"
