@@ -3,7 +3,7 @@ import { TemplateProps } from "@govtechsg/decentralized-renderer-react-component
 import { css } from "@emotion/core";
 import { CustomTemplateCertificate } from "../sample";
 import { PrintWatermark } from "../../core/PrintWatermark";
-import logo from "./aaa.jpeg";
+import logo from "./aaa.jpg";
 
 const containerStyle = css`
   background-: #324353;
@@ -19,13 +19,5 @@ export const CustomTemplate: FunctionComponent<TemplateProps<CustomTemplateCerti
   document,
   className = ""
 }) => {
-  return (
-    <div className="Container mr-100">
-      {/* <PrintWatermark />
-      <h1>{document.name}</h1> */}
-      <img src={logo} />
-      {/* <div>awarded to</div>
-      <h2>{document.recipient.name}</h2> */}
-    </div>
-  );
+  return <img src={logo} />;
 };
