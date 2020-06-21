@@ -3,9 +3,10 @@ import { TemplateProps } from "@govtechsg/decentralized-renderer-react-component
 import { css } from "@emotion/core";
 import { CustomTemplateCertificate } from "../sample";
 import { PrintWatermark } from "../../core/PrintWatermark";
+import logo from "./a.jpg";
 
 const containerStyle = css`
-  background-color: #324353;
+  background-: #324353;
   color: #ffffff;
   padding: 15px;
   margin: auto;
@@ -21,6 +22,7 @@ export const CustomTemplate: FunctionComponent<TemplateProps<CustomTemplateCerti
     <div css={containerStyle} className={className} id="custom-template">
       <PrintWatermark />
       <h1>{document.name}</h1>
+      <img src={logo} />
       <div>awarded to</div>
       <h2>{document.recipient.name}</h2>
     </div>
