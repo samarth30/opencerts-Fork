@@ -13,6 +13,7 @@ const containerStyle = css`
   width: 100%;
   height: 100%;
   text-align: center;
+  text-align: center;
 `;
 // css={containerStyle}
 export const CustomTemplate: FunctionComponent<TemplateProps<CustomTemplateCertificate> & { className?: string }> = ({
