@@ -19,5 +19,11 @@ export const CustomTemplate: FunctionComponent<TemplateProps<CustomTemplateCerti
   document,
   className = ""
 }) => {
-  return <img src={logo} />;
+  return (
+    <div style={{ alignItems: "center" }}>
+      <div style={{ flexDirection: "row" }}>
+        <img src={logo} />
+      </div>
+    </div>
+  );
 };
