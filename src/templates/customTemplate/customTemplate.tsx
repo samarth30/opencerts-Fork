@@ -21,7 +21,7 @@ export const CustomTemplate: FunctionComponent<TemplateProps<CustomTemplateCerti
   className = ""
 }) => {
   return (
-    <div style={{ alignItems: "center" }}>
+    <div style={{ alignItems: "center", height: "1000px" }}>
       <div style={{ flexDirection: "row" }}>
         <img src={logo} />
       </div>
