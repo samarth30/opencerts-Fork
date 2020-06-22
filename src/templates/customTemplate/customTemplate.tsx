@@ -13,11 +13,18 @@ const containerStyle = css`
   width: 100%;
   height: 100%;
   text-align: center;
+  text-align: center;
 `;
 // css={containerStyle}
 export const CustomTemplate: FunctionComponent<TemplateProps<CustomTemplateCertificate> & { className?: string }> = ({
   document,
   className = ""
 }) => {
-  return <img src={logo} />;
+  return (
+    <div style={{ alignItems: "center" }}>
+      <div style={{ flexDirection: "row" }}>
+        <img src={logo} />
+      </div>
+    </div>
+  );
 };
