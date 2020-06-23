@@ -1,6 +1,7 @@
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const CompressionPlugin = require("compression-webpack-plugin");
 const BrotliPlugin = require("brotli-webpack-plugin");
+const CopyWebpackPlugin = require("copy-webpack-plugin");
 const webpack = require("webpack");
 const path = require("path");
 
@@ -35,6 +36,10 @@ module.exports = {
             loader: "file-loader"
           }
         ]
+      },
+      {
+        test: /\.css$/i,
+        use: ["style-loader", "css-loader"]
       }
     ]
   },
@@ -45,7 +50,11 @@ module.exports = {
       template: `${__dirname}/static/index.html`
     }),
     ...(IS_PROD
-      ? [new CompressionPlugin({ test: /\.(js|css|html|svg)$/ }), new BrotliPlugin({ test: /\.(js|css|html|svg)$/ })]
+      ? [
+          new CompressionPlugin({ test: /\.(js|css|html|svg)$/ }),
+          new BrotliPlugin({ test: /\.(js|css|html|svg)$/ }),
+          new CopyWebpackPlugin([{ from: "static/images", to: "static/images" }])
+        ]
       : [])
   ],
   optimization: {
@@ -70,7 +79,7 @@ module.exports = {
     historyApiFallback: true,
     hot: true,
     inline: true,
-    port: 3000,
+    port: 3010,
     stats: {
       colors: true,
       progress: true
