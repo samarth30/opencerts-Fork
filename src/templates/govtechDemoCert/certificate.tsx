@@ -7,7 +7,7 @@ import { TemplateProps } from "@govtechsg/decentralized-renderer-react-component
 import { GovtechOpencertsTemplateCertificate } from "../samples";
 import { PrintWatermark } from "./common/PrintWatermark";
 import mainLogo from "./common/opencertslogo.svg";
-import logo from "./common/GOVTECH_logo.png";
+import logo from "./common/stamp.png";
 import certificateBg from "./common/certificate_background.png";
 
 export const CertificateTemplate: FunctionComponent<TemplateProps<GovtechOpencertsTemplateCertificate>> = ({
@@ -18,7 +18,7 @@ export const CertificateTemplate: FunctionComponent<TemplateProps<GovtechOpencer
     <div
       className="p-2 container"
       style={{
-        backgroundImage: `url('${certificateBg}')`,
+        backgroundColor: `#fefcfa`,
         backgroundPosition: "center",
         backgroundSize: "cover",
         border: "10px solid #324353"
@@ -43,7 +43,7 @@ export const CertificateTemplate: FunctionComponent<TemplateProps<GovtechOpencer
           <i>has successfully completed the</i>
         </div>
         <div className="mb-4 mb-lg-5 d-flex justify-content-center cert-title" style={{ textAlign: "center" }}>
-          OpenCerts Demo
+          {document.name}
         </div>
         <div className="mb-4 mb-lg-5 d-flex justify-content-center cert-body" style={{ textAlign: "center" }}>
           <i>certification through training administered by</i>

@@ -6,7 +6,7 @@ import "./common/demoStyles.css";
 import { ObfuscatableValue, TemplateProps } from "@govtechsg/decentralized-renderer-react-components";
 import { GovtechOpencertsTemplateCertificate } from "../samples";
 import { PrintWatermark } from "./common/PrintWatermark";
-import govtechLogo from "./common/GOVTECH_logo.png";
+import govtechLogo from "./common/stamp.png";
 import transcriptBg from "./common/transcript-background.png";
 import { SimplePrivacyFilterBanner } from "./common/SimplePrivacyFilterBanner";
 
