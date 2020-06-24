@@ -18,7 +18,7 @@ export const CertificateTemplate: FunctionComponent<TemplateProps<GovtechOpencer
     <div
       className="p-2 container"
       style={{
-        backgroundColor: `#fefcfa`,
+        backgroundImage: `url('${certificateBg}')`,
         backgroundPosition: "center",
         backgroundSize: "cover",
         border: "10px solid #324353"
@@ -43,13 +43,12 @@ export const CertificateTemplate: FunctionComponent<TemplateProps<GovtechOpencer
           <i>has successfully completed the</i>
         </div>
         <div className="mb-4 mb-lg-5 d-flex justify-content-center cert-title" style={{ textAlign: "center" }}>
-          {document.name}
+          OpenCerts Demo
         </div>
         <div className="mb-4 mb-lg-5 d-flex justify-content-center cert-body" style={{ textAlign: "center" }}>
           <i>certification through training administered by</i>
         </div>
         <div className="row">
-          <div className="col" />
           <div className="col">
             <img
               className="w-100"
@@ -58,16 +57,6 @@ export const CertificateTemplate: FunctionComponent<TemplateProps<GovtechOpencer
               alt="Govtech Logo"
             />
           </div>
-          <div className="col" />
-        </div>
-
-        <div
-          className="row"
-          style={{
-            paddingLeft: "8%",
-            paddingTop: "5%"
-          }}
-        >
           <div className="col text-center transcript">
             <img
               style={{ width: "100%", height: "auto" }}
@@ -87,19 +76,64 @@ export const CertificateTemplate: FunctionComponent<TemplateProps<GovtechOpencer
               {get(document, "additionalData.certSignatories[0].organisation")}
             </div>
           </div>
-
           <div className="col" />
-
+        </div>
+        <div
+          className="row"
+          style={{
+            paddingLeft: "8%",
+            paddingTop: "5%"
+          }}
+        >
+          <div className="col text-center transcript">
+            <img
+              style={{ width: "100%", height: "auto" }}
+              src={get(document, "additionalData.certSignatories[1].signature")}
+            />
+            <hr
+              style={{
+                border: "none",
+                height: "1px",
+                backgroundColor: "#333"
+              }}
+            />
+            <div>
+              <b>{get(document, "additionalData.certSignatories[1].name")}</b>
+              <br />
+              {get(document, "additionalData.certSignatories[1].position")},{" "}
+              {get(document, "additionalData.certSignatories[1].organisation")}
+            </div>
+          </div>
+          <div className="col" />
           <div
             className="d-flex flex-row-reverse col transcript"
             style={{
-              paddingTop: "5%",
-              paddingRight: "5%"
+              paddingTop: "0%",
+              paddingRight: "0%"
             }}
           >
-            Dated {format(document.issuedOn, "DD/MM/YYYY")}
+            <div className="col text-center transcript">
+              <img
+                style={{ width: "100%", height: "auto" }}
+                src={get(document, "additionalData.certSignatories[2].signature")}
+              />
+              <hr
+                style={{
+                  border: "none",
+                  height: "1px",
+                  backgroundColor: "#333"
+                }}
+              />
+              <div>
+                <b>{get(document, "additionalData.certSignatories[2].name")}</b>
+                <br />
+                {get(document, "additionalData.certSignatories[2].position")},{" "}
+                {get(document, "additionalData.certSignatories[2].organisation")}
+              </div>
+            </div>
           </div>
         </div>
+        Dated {format(document.issuedOn, "DD/MM/YYYY")}
       </div>
     </div>
   </>
